@@ -1,0 +1,61 @@
+//
+//  main.swift
+//  domashka
+//
+//  Created by oxana on 28.03.22.
+//
+
+import Foundation
+
+// 1.решить квадратное уравнение
+
+let a:Float  = 3
+let b:Float  = 8
+let c:Float  = 9
+var x1:Float
+var x2:Float
+var d :Float
+var discriminant :Float
+d = Float(b * b - (4 * a * c))
+if (d >= 0) {
+    discriminant = sqrt(d)
+    x1 = (-b + Float(Int(discriminant))) / (2 * a)
+    x2 = Float((-b - discriminant) / (2 * a ))
+    print ( x1,x2)
+    
+}
+else if (d<0)
+{
+    d = ((4 * a * c) - pow(b, 2)) / (2 * a)
+    print (d)
+}
+
+//2.Даны катеты прямоугольного треугольника. Найти площадь, периметр и гипотенузу треугольника.
+
+ 
+
+var tra = 5
+var trb = 9
+var гипотенуза:Double = sqrt(pow(Double(tra),2) + pow(Double(trb),2))
+var периметр:Double = Double(tra + trb) + гипотенуза
+var площадь:Double = (Double((tra * trb)/2))
+print (гипотенуза)
+print (периметр)
+print (площадь)
+
+//*Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5 лет.
+
+var deposit:Float = 1000
+var persent:Float = 30
+persent = persent/100
+var result1 = deposit + (deposit * persent)
+var result2 = result1 + (result1 * persent)
+var result3 = result2 + (result2 * persent)
+var result4 = result3 + (result3 * persent)
+var result5 = result4 + (result4 * persent)
+var counter = 1
+var time = [result1, result2,result3, result4, result5]
+for i in time{
+    print("Через \(counter) год сумма вклада будет равна \(i)")
+    counter += 1
+}
